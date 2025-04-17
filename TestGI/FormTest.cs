@@ -53,19 +53,21 @@ namespace TestGI
                 int userAnswer = Convert.ToInt32(textBoxUserAnswer.Text);
                 test.CheckAnswer(userAnswer);
 
-                if (test.EndOfTest())
-                {
-                    MessageBox.Show(test.Diagnose());
-                    buttonNewStart.Visible = true;
-                }
-                else
-                {
-                    ShowQuestion();
-                }
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show("В ответе может быть только число");
+            }
+
+            if (test.EndOfTest())
+            {
+                MessageBox.Show(test.Diagnose());
+                buttonNewStart.Visible = true;
+            }
+            else
+            {
+                ShowQuestion();
             }
         }
 
@@ -79,6 +81,9 @@ namespace TestGI
             StartTest();
         }
 
-       
+        private void FormTest_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
