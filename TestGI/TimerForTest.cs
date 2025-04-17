@@ -24,18 +24,19 @@ namespace TestGI
             this.TextAlign = ContentAlignment.MiddleCenter;
             timer = new Timer();
             timer.Tick += Timer_Tick;
-            timer.Interval = 100;
+            timer.Interval = 1000;
         }
 
         public void Start()
         {
             timeCurrent = timeTotal;
+            this.Text = timeCurrent.ToString();
             timer.Enabled = true;
         }
 
         private void Timer_Tick(object sender, System.EventArgs e)
         {
-            if (timeCurrent == 0)
+            if (timeCurrent == -1)
             {
                 timer.Enabled = false;
                 TimeCompleted?.Invoke(this, "Время закончилось!");
