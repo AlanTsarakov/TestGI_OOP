@@ -60,7 +60,7 @@
             // buttonNewStart
             // 
             this.buttonNewStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonNewStart.Location = new System.Drawing.Point(217, 373);
+            this.buttonNewStart.Location = new System.Drawing.Point(216, 336);
             this.buttonNewStart.Margin = new System.Windows.Forms.Padding(4);
             this.buttonNewStart.Name = "buttonNewStart";
             this.buttonNewStart.Size = new System.Drawing.Size(420, 59);
@@ -104,6 +104,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormTest";
             this.Text = "Тест ГЕНИЙ - ИДИОТ";
+            this.Load += new System.EventHandler(this.FormTest_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

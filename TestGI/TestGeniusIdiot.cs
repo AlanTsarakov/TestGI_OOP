@@ -12,7 +12,7 @@ namespace TestGI
         Random rnd = new Random();
         List<Question> listQuestion = new List<Question>();
         int indexQuestion = -1;
-        int countRightAnswer = 0;
+        public int countRightAnswer = 0;
         string[] diagnose = { "идиот", "кретин", "дурак", "норма", "талант", "гений" };
         int[] orderQuestions = { 2, 3, 1, 0, 4 };
 

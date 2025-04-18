@@ -55,8 +55,11 @@ namespace TestGI
 
                 if (test.EndOfTest())
                 {
-                    MessageBox.Show(test.Diagnose());
+                    timer.Stop();
                     buttonNewStart.Visible = true;
+                    buttonNextQuestion.Visible = false;
+                    FormSaveResult form = new FormSaveResult(test.countRightAnswer);
+                    form.ShowDialog();
                 }
                 else
                 {
@@ -77,8 +80,14 @@ namespace TestGI
         private void buttonNewStart_Click(object sender, EventArgs e)
         {
             StartTest();
+            buttonNewStart.Visible = false;
+            buttonNextQuestion.Visible = true;
         }
 
-       
+
+        private void FormTest_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
