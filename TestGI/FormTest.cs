@@ -58,7 +58,9 @@ namespace TestGI
                     timer.Stop();
                     buttonNewStart.Visible = true;
                     buttonNextQuestion.Visible = false;
-                    FormSaveResult form = new FormSaveResult(test.countRightAnswer);
+                    string diagnosis = test.Diagnose();
+                    
+                    FormSaveResult form = new FormSaveResult(test.countRightAnswer, diagnosis);
                     form.ShowDialog();
                 }
                 else

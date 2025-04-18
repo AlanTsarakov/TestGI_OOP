@@ -15,11 +15,13 @@ namespace TestGI
     public partial class FormSaveResult : Form
     {
         int Points = 0;
+        string Diagnosis = "";
         List<User> users = new List<User>();
         User user;
-        public FormSaveResult(int Points)
+        public FormSaveResult(int Points, string Diagnosis)
         {
             this.Points = Points;
+            this.Diagnosis = Diagnosis;
             InitializeComponent();
         }
 
@@ -30,14 +32,14 @@ namespace TestGI
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            user = new User(textBoxName.Text, Points);
+            user = new User(textBoxName.Text, Diagnosis, Points);
 
             if (!string.IsNullOrEmpty(textBoxName.Text))
             {
                 
                 try
                 {
-                    users = LoadUsersFromFile("data/results.json");
+                    users = user.LoadUsersFromFile("data/results.json");
                 }
                 catch (Exception)
                 {
@@ -46,12 +48,15 @@ namespace TestGI
 
                 SaveUserFromFile();
 
+                FormTop form = new FormTop();
+                form.ShowDialog();
                 Close();
             }
             else
             {
                 MessageBox.Show("Введите имя пользователя!");
             }
+            
         }
 
         public void SaveUserFromFile()
@@ -60,22 +65,23 @@ namespace TestGI
             string json = JsonConvert.SerializeObject(users);
             File.WriteAllText("data/results.json", json);
         }
-        public List<User> LoadUsersFromFile(string path)
-        {
-            if (!File.Exists(path))
-            {
-                return new List<User>(); // Возвращаем пустой список, если файла нет
-            }
 
-            string json = File.ReadAllText(path);
+        //public List<User> LoadUsersFromFile(string path)
+        //{
+        //    if (!File.Exists(path))
+        //    {
+        //        return new List<User>(); // Возвращаем пустой список, если файла нет
+        //    }
+
+        //    string json = File.ReadAllText(path);
             
 
-            if (string.IsNullOrEmpty(json))
-            {
-                return new List<User>();
-            }
+        //    if (string.IsNullOrEmpty(json))
+        //    {
+        //        return new List<User>();
+        //    }
 
-            return JsonConvert.DeserializeObject<List<User>>(json);
-        }
+        //    return JsonConvert.DeserializeObject<List<User>>(json);
+        //}
     }
 }

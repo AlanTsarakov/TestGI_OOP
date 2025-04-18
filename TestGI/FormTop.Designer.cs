@@ -1,5 +1,4 @@
-﻿
-namespace TestGI
+﻿namespace TestGI
 {
     partial class FormTop
     {
@@ -29,12 +28,93 @@ namespace TestGI
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.dataGridViewTop = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTop)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // dataGridViewTop
+            // 
+            this.dataGridViewTop.AllowUserToAddRows = false;
+            this.dataGridViewTop.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTop.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewTop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTop.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTop.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dataGridViewTop.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewTop.Name = "dataGridViewTop";
+            this.dataGridViewTop.ReadOnly = true;
+            this.dataGridViewTop.RowHeadersWidth = 51;
+            this.dataGridViewTop.RowTemplate.Height = 24;
+            this.dataGridViewTop.Size = new System.Drawing.Size(1282, 389);
+            this.dataGridViewTop.TabIndex = 0;
+            this.dataGridViewTop.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTop_CellContentClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Имя игрока";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 330;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Диагноз";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 330;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Количество баллов";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 330;
+            // 
+            // FormTop
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FormTop";
+            this.ClientSize = new System.Drawing.Size(1282, 401);
+            this.Controls.Add(this.dataGridViewTop);
+            this.Name = "FormTop";
+            this.Text = "Рейтинговая таблица";
+            this.Load += new System.EventHandler(this.FormTop_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTop)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dataGridViewTop;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
     }
 }
